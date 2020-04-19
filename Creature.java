@@ -20,6 +20,13 @@ public class Creature
        
    }
    
+    public Creature(int helath, int strength)
+   {
+       health = 10;
+       strength = 10;
+      
+       
+   }
    
  /**
   * returns damage
@@ -39,6 +46,12 @@ public class Creature
       
       return false;
        
+    }
+    
+    public void takeDamage(int damage)
+    {
+     health=- damage;    
+        
     }
     
    public boolean isDead()
