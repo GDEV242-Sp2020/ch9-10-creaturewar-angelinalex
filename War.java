@@ -1,5 +1,7 @@
+
 import java.util.ArrayList;
 import java.util.Random; 
+
 /**
  * Write a description of class War here.
  *
@@ -10,16 +12,18 @@ public class War
 {
     
     private ArrayList<Creature> emperialArmy = new ArrayList<Creature>();
-    private ArrayList<Creature> underWorldlArmy = new ArrayList<Creature>();
+    private ArrayList<Creature> underWorldArmy = new ArrayList<Creature>();
+    Creature emperialWarrior = null;
+    Creature underWorldWarrior = null;
 
-    private Randomizer r = new Randomizer();
+    private Randoms r = new Randoms();
     /**
      * Constructor for objects of class War
      */
     public War()
     {
-        createEmperialArmy(300);
-        createUnderworldArmy(300); 
+        createEmperialArmy(50);
+        createUnderworldArmy(45); 
     }
     
     private void createEmperialArmy(int numSoldiers)
@@ -29,7 +33,7 @@ public class War
         for(int i=0; i < numSoldiers; i++)
           {
             
-         int num = Randomizer.nextInt(5);    
+         int num = Randoms.nextInt(5);    
          
          if(num == 1 || num == 2) {
              
@@ -53,38 +57,103 @@ public class War
         for(int i=0; i < numSoldiers; i++)
           {
             
-         int num = Randomizer.nextInt(5);    
+         int num = Randoms.nextInt(5);    
          
          if(num == 1)
          {
-          underWorldlArmy.add(new Barlog()); 
+          underWorldArmy.add(new Barlog()); 
           
          }
          else if(num ==2) 
          {
-           underWorldlArmy.add(new Cyberdemon()); 
+           underWorldArmy.add(new Cyberdemon()); 
          }
          else{
-             underWorldlArmy.add(new Human()); 
+             underWorldArmy.add(new Human()); 
             }
          
         }
       }
       
-      public void Fight()
+      public void Fight() {
+        
+        System.out.println("-----------------------------------------------------");
+        System.out.println("--------------The war has begun!!--------------------");
+        
+        createEmperialArmy(50);
+        createUnderworldArmy(45);
+        
+        while(emperialArmy.size() != 0  && underWorldArmy.size() != 0 )
+        {
+            emperialWarrior = emperialArmy.get(0); 
+            underWorldWarrior = underWorldArmy.get(0);
+            
+            
+            int chance = Randoms.nextInt(1);
+            
+         if(chance == 1 && emperialWarrior.isAlive())
+            {
+             emperialWarrior.takeDamage(underWorldWarrior.damage()); 
+             
+             
+             
+              if(emperialWarrior.isAlive())
+             {
+              emperialArmy.remove(emperialWarrior);   
+              System.out.println("--------------Emperial Warrior is dead!!!--------------------");
+             }
+             else if(emperialWarrior.isDead() )
+             {
+                 System.out.println("--------------Emperial Warrior is injured!!!--------------------");
+             }
+          
+            }
+        
+         if(chance == 0 && underWorldWarrior.isAlive())
+            {
+             underWorldWarrior.takeDamage(emperialWarrior.damage()); 
+             
+             
+             
+               if(underWorldWarrior.isAlive())
+             {
+              underWorldArmy.remove(underWorldWarrior);   
+              System.out.println("--------------Underworld Warrior is dead!!!--------------------");
+             }
+             else if(underWorldWarrior.isDead())
+             {
+                 System.out.println("--------------Underworld Warrior is injured!!!--------------------");
+             }
+             
+            }
+            
+            
+            
+             
+            
+       }
+        
+      if(emperialArmy.size() < 1)
       {
-          
-          Creature emperialWarrior = null;
-          Creature underworldWarrior = null;
-          boolean emperialAlive = false;
-          boolean underworldAlive  = false; 
-          
-          while(emperialArmy.size() > 0 && underWorldlArmy.size() > 0 || emperialArmy.size() > 0 && underworldAlive || underWorldlArmy.size() > 0 && emperialAlive) 
-          {
-              
-              
+       System.out.println("--------------Underworld Warrior has won !!!!--------------------");
           
           
-          }
-        }
+      }
+        
+     if(underWorldArmy.size() < 1)
+      {
+       System.out.println("--------------Underworld Warrior has won !!!!--------------------");
+          
+          
+      }
+      
+       if(underWorldArmy.size() <= 0 && emperialArmy.size() <= 0)
+      {
+       System.out.println("--------------Everyone is dead !!!!--------------------");
+          
+          
+      }
+      
+   }
+
 }

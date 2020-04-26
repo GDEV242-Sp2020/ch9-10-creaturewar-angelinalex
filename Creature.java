@@ -7,22 +7,22 @@ import java.util.Random;
  */
 public class Creature
 {
-   private int health;
+   private int hp; 
    private int strength;
    /**
     * Constructor fot creature
     */
    public Creature()
    {
-       health = 10;
+       hp = 10;
        strength = 10;
       
        
    }
    
-    public Creature(int helath, int strength)
+    public Creature(int hp, int straight)
    {
-       health = 10;
+       hp = 10;
        strength = 10;
       
        
@@ -31,35 +31,42 @@ public class Creature
  /**
   * returns damage
   */   
-   public int damage(int damage){
+   public int damage(){
        Random randomDamage= new Random(); 
-       damage = randomDamage.nextInt(strength); 
+       int damage = randomDamage.nextInt(strength); 
        return damage;
     }
     
-   public boolean isAlive(boolean alive)
+   public boolean isAlive()
    {
-      if(health>0)
+      if(this.hp<=0)
       {
-      return true;
+      return false;
       }
       
-      return false;
+      return true;
        
     }
     
-    public void takeDamage(int damage)
+    public void takeDamage(int attackDamage)
     {
-     health=- damage;    
+     this.hp=- attackDamage;    
         
     }
     
    public boolean isDead()
    {
-    if(health<0)
+    if(this.hp<0)
     {
         return false;
    }
    return true;
-}
+  }
+
+  public int getHealth()
+  {
+      return hp; 
+  }
+   
+   
 }

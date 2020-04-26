@@ -6,7 +6,7 @@ import java.util.Random;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Randomizer
+public class Randoms
 {
     // instance variables - replace the example below with your own
     private static Random rand;
@@ -14,7 +14,7 @@ public class Randomizer
     /**
      * Constructor for objects of class Randomizer
      */
-    public Randomizer()
+    public Randoms()
     {
         rand = new Random();
     }
@@ -25,12 +25,12 @@ public class Randomizer
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public static int nextInt(int y)
+    public static int nextInt(int num)
     {
-        if (rand == null) {
-            rand = new Random();
-        }
-        
-        return rand.nextInt(y);
+       Random random = new Random(); 
+       
+       int newNum = random.nextInt(num); 
+       
+       return num; 
     }
 }

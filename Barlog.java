@@ -20,18 +20,19 @@ public class Barlog extends Demon
     {
         // initialise instance variables
         super(
-            Randomizer.nextInt(MAX_DEMON_STR-MIN_DEMON_STR)+MIN_DEMON_STR,
-            Randomizer.nextInt(MAX_DEMON_HP-MIN_DEMON_HP)+MIN_DEMON_HP
+            Randoms.nextInt(MAX_DEMON_STR-MIN_DEMON_STR)+MIN_DEMON_STR,
+            Randoms.nextInt(MAX_DEMON_HP-MIN_DEMON_HP)+MIN_DEMON_HP
         );
     }
 
-    @Override
-    public int damage(int damage)
+    
+    public int damage()
     {
+        int barlogDamage = super.damage() * 2;
         
         System.out.println("Double damage!");
         
-        damage= damage *2; 
-        return damage; 
+        barlogDamage= barlogDamage *2; 
+        return barlogDamage; 
     }
 }
