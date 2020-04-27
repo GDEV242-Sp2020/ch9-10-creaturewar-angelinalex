@@ -39,7 +39,7 @@ public class Creature
     
    public boolean isAlive()
    {
-      if(this.hp<=0)
+      if(hp<=0)
       {
       return false;
       }
@@ -56,7 +56,7 @@ public class Creature
     
    public boolean isDead()
    {
-    if(this.hp<0)
+    if(hp<0)
     {
         return false;
    }
