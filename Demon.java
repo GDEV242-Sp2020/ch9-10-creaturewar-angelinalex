@@ -41,7 +41,7 @@ public class Demon extends Creature
        
        if(demonDamage == 1) 
        {
-         demonDamage=+50; 
+         demonDamage=+ 50; 
          
          
        } 
