@@ -36,7 +36,7 @@ public class Elf extends Creature
        
        damage = randomNum.nextInt(MAX_ELF_STR); 
        int tenPercentChance = randomNum.nextInt(9);
-       if(damage < MIN_ELF_STR)
+       if(damage < MIN_ELF_STR + 1)
        {
            int i = MIN_ELF_STR - damage;
            damage+= i;       

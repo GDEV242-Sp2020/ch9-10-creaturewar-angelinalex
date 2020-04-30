@@ -8,10 +8,10 @@ import java.util.Random;
 public class Demon extends Creature
 {
     // instance variables - replace the example below with your own
-    private static final int MAX_DEMON_HP = 50;
-    private static final int MIN_DEMON_HP = 30;
-    private static final int MAX_DEMON_STR = 80;
-    private static final int MIN_DEMON_STR = 2;
+    private static final int MAX_DEMON_HP = 30;
+    private static final int MIN_DEMON_HP = 20;
+    private static final int MAX_DEMON_STR = 25;
+    private static final int MIN_DEMON_STR = 10;
 
     /**
      * Constructor for objects of class Demon
@@ -19,8 +19,9 @@ public class Demon extends Creature
     public Demon()
     {
          super(
-            Randoms.nextInt(MAX_DEMON_STR-MIN_DEMON_STR)+MIN_DEMON_STR,
-            Randoms.nextInt(MAX_DEMON_HP-MIN_DEMON_HP)+MIN_DEMON_HP
+           
+            Randoms.nextInt(MAX_DEMON_HP-MIN_DEMON_HP)+MIN_DEMON_HP,
+            Randoms.nextInt(MAX_DEMON_STR-MIN_DEMON_STR)+MIN_DEMON_STR
         );
         
     } 
@@ -42,7 +43,7 @@ public class Demon extends Creature
        {
          demonDamage=+50; 
          
-         System.out.println("Magic attack!");
+         
        } 
        
        

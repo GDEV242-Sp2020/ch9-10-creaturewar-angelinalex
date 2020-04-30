@@ -25,12 +25,12 @@ public class Randoms
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public static int nextInt(int num)
+    public static int nextInt(int y)
     {
-       Random random = new Random(); 
-       
-       int newNum = random.nextInt(num); 
-       
-       return num; 
+        if (rand == null) {
+            rand = new Random();
+        }
+        
+        return rand.nextInt(y);
     }
 }

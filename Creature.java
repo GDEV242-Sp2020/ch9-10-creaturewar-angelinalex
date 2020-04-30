@@ -20,10 +20,10 @@ public class Creature
        
    }
    
-    public Creature(int hp, int straight)
+    public Creature(int hp, int strength)
    {
-       hp = 10;
-       strength = 10;
+       this.hp = 10;
+       this.strength = strength;
       
        
    }
@@ -32,8 +32,8 @@ public class Creature
   * returns damage
   */   
    public int damage(){
-       Random randomDamage= new Random(); 
-       int damage = randomDamage.nextInt(strength); 
+       
+       int damage = Randoms.nextInt(strength); 
        return damage;
     }
     
@@ -50,7 +50,7 @@ public class Creature
     
     public void takeDamage(int attackDamage)
     {
-     this.hp=- attackDamage;    
+     this.hp= hp - attackDamage;    
         
     }
     
@@ -58,9 +58,9 @@ public class Creature
    {
     if(hp<0)
     {
-        return false;
+        return true;
    }
-   return true;
+   return false;
   }
 
   public int getHealth()
