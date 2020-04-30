@@ -29,11 +29,11 @@ public class Elf extends Creature
         
     }
     
-   
-    public int damage(int damage)
+    @Override
+    public int damage()
     {
        Random randomNum= new Random(); 
-       
+       int damage;
        damage = randomNum.nextInt(MAX_ELF_STR); 
        int tenPercentChance = randomNum.nextInt(9);
        if(damage < MIN_ELF_STR + 1)

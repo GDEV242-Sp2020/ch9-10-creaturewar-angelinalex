@@ -38,13 +38,15 @@ public class Human extends Creature
         
     }
     
-    @Override 
+    @Override
     public int damage()
     {
         
-        int damageDone;
-        damageDone = super.damage();
-        return damageDone;
+        return Randoms.nextInt(MAX_HUMAN_STR-MIN_HUMAN_STR)+MIN_HUMAN_STR;
+        
+        //int damageDone;
+       // damageDone = super.damage();
+       // return damageDone;
     }
 
    

@@ -26,10 +26,10 @@ public class Barlog extends Demon
         );
     }
 
-    
+    @Override
     public int damage()
     {
-        int barlogDamage = super.damage() * 2;
+        int barlogDamage = Randoms.nextInt(MAX_DEMON_STR-MIN_DEMON_STR)+MIN_DEMON_STR;
         
         
         

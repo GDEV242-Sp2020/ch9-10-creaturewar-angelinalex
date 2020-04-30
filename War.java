@@ -22,8 +22,7 @@ public class War
      */
     public War()
     {
-        createEmperialArmy(5);
-        createUnderworldArmy(5); 
+        
         
         
     }
@@ -78,10 +77,7 @@ public class War
       }
       
        public void Fight() {
-           
-           
-           
-           
+
         System.out.println("-----------------------------------------------------");
         System.out.println("-----------------------------------------------------");
         System.out.println("--------------The war has begun!!--------------------");
@@ -95,101 +91,81 @@ public class War
         System.out.println("------        \\                         ------------");
         System.out.println("-----------------------------------------------------");
         System.out.println("-----------------------------------------------------");
-        System.out.println("-----------------------------------------------------");
-        System.out.println("-----------------------------------------------------");
-        
-        
-        
-        
-        
-        
-        emperialWarrior = emperialArmy.get(0); 
-        underWorldWarrior = underWorldArmy.get(0);
-        
-        createEmperialArmy(10);
-        createUnderworldArmy(10); 
-        
-        
+
+        createEmperialArmy(2);
+        createUnderworldArmy(2); 
+
        while(emperialArmy.size() > 0 && underWorldArmy.size() > 0 )
        {
          
-           if(emperialWarrior ==null)
-           {
-               emperialArmy.remove(0); 
-              
-           }
            
-           if(underWorldWarrior == null)
+           emperialWarrior = emperialArmy.get(0); 
+          underWorldWarrior = underWorldArmy.get(0);
+           
+           if(emperialWarrior == null)
+          {
+              emperialArmy.remove(0); 
+             
+          }
+           
+          if(underWorldWarrior == null)
            {
-               underWorldArmy.remove(0);
+             underWorldArmy.remove(0);
+             
+          }
+           
+          emperialWarrior = emperialArmy.get(0); 
+          underWorldWarrior = underWorldArmy.get(0);
+           
+           
+           while(emperialWarrior.isAlive() && underWorldWarrior.isAlive())
+           {
                
-           }
-           
-           int chance = Randoms.nextInt(2) +1; 
-           
-           
-           if(chance == 1)
-           {
-              emperialWarrior.takeDamage(underWorldWarrior.damage()); 
+             int  hit = underWorldWarrior.damage();  
+              emperialWarrior.takeDamage(hit); 
               
           
-             
-              System.out.println("  Emperial warrior in the " +emperialWarrior.getClass() +" has been struck   ");
-              System.out.println(" by the Underworld Warrior in the " +underWorldWarrior.getClass() +  "!!  ");
-             
-            
+             System.out.println("-----------------------------------------------------");
+              System.out.println("Emperial warrior in the " +emperialWarrior.getClass() +" has been struck with a blow of  " + hit);
+              System.out.println("by the Underworld Warrior in the " +underWorldWarrior.getClass() +  "!!  ");
+              System.out.println("His health is " + emperialWarrior.getHealth());
               
-           }
-           else
-           {
-               underWorldWarrior.takeDamage(emperialWarrior.damage()); 
+              int hit1 = emperialWarrior.damage(); 
+              underWorldWarrior.takeDamage(hit1); 
                
             
-             
-              System.out.println("  Underworld warrior in the "  +underWorldWarrior.getClass() +  " has been struck  ");
-              System.out.println("   by the EmperialWarrior in the "  +emperialWarrior.getClass() +    "!  ");
-             
-             
-               
-               
-            }
-           
-           
-           if(underWorldWarrior.getHealth() < 1)
+              System.out.println("-----------------------------------------------------");
+              System.out.println("Underworld warrior in the "  +underWorldWarrior.getClass() +  " has been struck with a blow of " +hit1);
+              System.out.println("by the Emperial Warrior in the "  +emperialWarrior.getClass() +    "!  ");
+              System.out.println("His health is " + underWorldWarrior.getHealth());
+           }
+          
+           if(emperialWarrior.isDead())
            {
-               emperialArmy.remove(0);
+               
                
                
                 System.out.println("  Emperial Warrior from the "+ emperialWarrior.getClass() + "  ");
                 System.out.println("                  is dead!!                   ");
+                emperialArmy.remove(0);
                 
-               
-               
+                
            }
            
-           if(underWorldWarrior.getHealth() < 1)
+           if(underWorldWarrior.isDead())
            {
-               underWorldArmy.remove(0);
                
-               
-              
                System.out.println("   Underworld Warrior from the "+ underWorldWarrior.getClass() + "");
                System.out.println("                  is dead!!                   ");
-                
+               underWorldArmy.remove(0);
+               
+              
+              
              
            }
-           
-           
-           
-           
-           
-           
-            
+          
         }
-        
-        
-        
-        
+       
          if(emperialArmy.size() < 1 && underWorldArmy.size() > 0)
          {
          System.out.println("-----------------------------------------------------");
@@ -205,7 +181,7 @@ public class War
        System.out.println("-----------------------------------------------------");
         }
         
-         if(underWorldArmy.size() < 1 && emperialArmy.size() < 0)
+         if(underWorldArmy.size() < 1 && emperialArmy.size() > 0)
         {
         System.out.println("-------------------------------------------------------");
         System.out.println("--------------Emperial Army has won !!!!---------------");

@@ -39,12 +39,12 @@ public class Creature
     
    public boolean isAlive()
    {
-      if(hp<=0)
+      if(hp >=0)
       {
-      return false;
+      return true;
       }
       
-      return true;
+      return false;
        
     }
     
