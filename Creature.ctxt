@@ -1,20 +1,25 @@
 #BlueJ class context
 comment0.target=Creature
-comment0.text=\n\ Write\ a\ description\ of\ class\ Creature\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Creature\ here.\n\ \n\ @author\ Angelina\ Joy\n\ @version\ April\ 30th\ 2020\n
 comment1.params=
 comment1.target=Creature()
 comment1.text=\n\ Constructor\ fot\ creature\n
 comment2.params=hp\ strength
 comment2.target=Creature(int,\ int)
+comment2.text=\n\ @param\ hp\n\ @param\ strength\n
 comment3.params=
 comment3.target=int\ damage()
-comment3.text=\n\ returns\ damage\n
+comment3.text=\n\ @returns\ damage\n
 comment4.params=
 comment4.target=boolean\ isAlive()
+comment4.text=\n\ if\ health\ is\ more\ than\ 0\ \n\ @return\ true\n\ \n
 comment5.params=attackDamage
 comment5.target=void\ takeDamage(int)
+comment5.text=\n\ @param\ take\ damage\n\ implements\ this\ health\n
 comment6.params=
 comment6.target=boolean\ isDead()
+comment6.text=\n\ if\ health\ is\ less\ than\ 0\n\ @return\ true\n
 comment7.params=
 comment7.target=int\ getHealth()
+comment7.text=\n\ @returns\ value\ for\ health\n
 numComments=8

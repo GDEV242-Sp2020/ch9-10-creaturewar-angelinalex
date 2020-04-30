@@ -2,8 +2,8 @@ import java.util.Random;
 /**
  * Write a description of class Creature here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Angelina Joy
+ * @version April 30th 2020
  */
 public class Creature
 {
@@ -19,7 +19,10 @@ public class Creature
       
        
    }
-   
+   /**
+    * @param hp
+    * @param strength
+    */
     public Creature(int hp, int strength)
    {
        this.hp = 10;
@@ -29,14 +32,18 @@ public class Creature
    }
    
  /**
-  * returns damage
+  * @returns damage
   */   
    public int damage(){
        
       int damage = this.strength;
       return damage;
     }
-    
+  /**
+   * if health is more than 0 
+   * @return true
+   * 
+   */
    public boolean isAlive()
    {
       if(hp >=0)
@@ -47,13 +54,19 @@ public class Creature
       return false;
        
     }
-    
+    /**
+     * @param take damage
+     * implements this health
+     */
     public void takeDamage(int attackDamage)
     {
      this.hp = hp - attackDamage;    
         
     }
-    
+    /**
+     * if health is less than 0
+     * @return true
+     */
    public boolean isDead()
    {
     if(hp<0)
@@ -62,7 +75,9 @@ public class Creature
    }
    return false;
   }
-
+ /**
+  * @returns value for health
+  */
   public int getHealth()
   {
       return hp; 

@@ -5,8 +5,8 @@ import java.util.Random;
 /**
  * Write a description of class War here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Angelina Joy
+ * @version April 30th 2020
  */
 public class War
 {
@@ -22,11 +22,13 @@ public class War
      */
     public War()
     {
-        
-        
+          
         
     }
-    
+    /**
+     * @param numSolders 
+     * populates emperial Army array
+     */
     private void createEmperialArmy(int numSoldiers)
     {
         
@@ -50,7 +52,10 @@ public class War
     
         }
       }
-
+       /**
+     * @param numSolders 
+     * populates underWorld Army array
+     */
     private void createUnderworldArmy(int numSoldiers)
     {
         
@@ -75,7 +80,10 @@ public class War
          
         }
       }
-      
+      /**
+       * 
+       * Implemts a WARR!!!!
+       */
        public void Fight() {
         int x = Randoms.nextInt(5) + 6;
         int y = Randoms.nextInt(5) + 5; 

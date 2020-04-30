@@ -3,8 +3,8 @@
 /**
  * Write a description of class Human here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Angelina Joy
+ * @version April 30th 2020
  */
 public class Human extends Creature
 {
@@ -37,7 +37,10 @@ public class Human extends Creature
         
         
     }
-    
+     /**
+     * @returns damage
+     * @overrides damage in creture class
+     */
     @Override
     public int damage()
     {

@@ -2,8 +2,8 @@ import java.util.Random;
 /**
  * Write a description of class Elf here.
  *
- * @author (your name)
- * @version (a version number or a date)
+  * @author Angelina Joy
+ * @version April 30th 2020
  */
 public class Elf extends Creature
 {
@@ -28,7 +28,10 @@ public class Elf extends Creature
         );
         
     }
-    
+    /**
+     * @returns damage
+     * @overrides damage in creture class
+     */
     @Override
     public int damage()
     {

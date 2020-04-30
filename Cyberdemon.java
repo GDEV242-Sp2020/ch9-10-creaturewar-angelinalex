@@ -2,8 +2,8 @@
 /**
  * Write a description of class Cyberdemon here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Angelina Joy
+ * @version April 30th 2020
  */
 public class Cyberdemon extends Demon
 {
@@ -24,7 +24,10 @@ public class Cyberdemon extends Demon
         );
         
     }
-
+    /**
+     * @returns damage
+     * @overrides damage in creture class
+     */
      @Override
     public int damage()
     {
