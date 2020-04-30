@@ -92,7 +92,7 @@ public class War
         System.out.println("-----------------------------------------------------------------");
         System.out.println("-----------------------------------------------------------------");
 
-        createEmperialArmy(10);
+        createEmperialArmy(11);
         createUnderworldArmy(10); 
 
        while(emperialArmy.size() > 0 && underWorldArmy.size() > 0 )
