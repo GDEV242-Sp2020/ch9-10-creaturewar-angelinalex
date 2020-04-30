@@ -34,6 +34,8 @@ public class Barlog extends Demon
         
         
         barlogDamage= barlogDamage *2; 
+        
+        System.out.println("Barlog demon strikes a mightly blow!!");
         return barlogDamage; 
     }
 }

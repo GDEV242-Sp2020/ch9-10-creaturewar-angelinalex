@@ -33,8 +33,8 @@ public class Creature
   */   
    public int damage(){
        
-       int damage = Randoms.nextInt(strength); 
-       return damage;
+      int damage = this.strength;
+      return damage;
     }
     
    public boolean isAlive()
@@ -50,7 +50,7 @@ public class Creature
     
     public void takeDamage(int attackDamage)
     {
-     this.hp= hp - attackDamage;    
+     this.hp = hp - attackDamage;    
         
     }
     

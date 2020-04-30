@@ -40,13 +40,14 @@ public class Elf extends Creature
        {
            int i = MIN_ELF_STR - damage;
            damage+= i;       
+           System.out.println("         Elf hits his opponent in the face!");
        }
        
        if(tenPercentChance == 0) 
        {
          damage = damage * 2; 
          
-         System.out.println("Magic attack!");
+         System.out.println("          THE ELF HAS PERFORMED A MAGIC ATTACK!!!");
        } 
        
        

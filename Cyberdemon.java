@@ -25,5 +25,17 @@ public class Cyberdemon extends Demon
         
     }
 
+     @Override
+    public int damage()
+    {
+        int cyberDamage = Randoms.nextInt(MAX_DEMON_STR-MIN_DEMON_STR)+MIN_DEMON_STR;
+        
+        
+        
+        
+        
+        System.out.println(" Cyberdemon attacks!!!!");
+        return cyberDamage; 
+    }
    
 }

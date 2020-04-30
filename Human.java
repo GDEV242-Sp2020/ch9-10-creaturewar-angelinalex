@@ -41,8 +41,9 @@ public class Human extends Creature
     @Override
     public int damage()
     {
-        
+        System.out.println("The human hits his opponent over the head with a war hammer!!!");
         return Randoms.nextInt(MAX_HUMAN_STR-MIN_HUMAN_STR)+MIN_HUMAN_STR;
+        
         
         //int damageDone;
        // damageDone = super.damage();
